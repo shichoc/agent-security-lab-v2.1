@@ -1,7 +1,18 @@
-# Agent Security Lab V2
+# Agent Security Lab V2.1
 
-V2 keeps V1's Gateway/Runtime boundary and adds credential guardrails, an
-optional LLM-as-Judge, structured logs, and persistent security events.
+V2.1 extends V2.0 with an optional LLM-as-Judge guardrail for prompt-injection
+detection. It retains the Gateway/Runtime boundary, credential guardrails,
+structured operational logs, and persistent security events from V2.0.
+
+## What V2.1 adds
+
+- Optional LLM-as-Judge input and output evaluation
+- Independent Agent LLM and Judge model/provider/API-key settings
+- Configurable allow, warn, and deny thresholds
+- Configurable Judge failure mode
+- Judge metadata in security events, including model, prompt version, latency,
+  decision, risk score, and token usage
+- A local mock Judge for deterministic demonstrations without an external LLM
 
 ## Start
 
@@ -85,3 +96,4 @@ The credential detector runs first. Inputs containing explicit credentials are
 blocked locally and are never sent to the Judge. Judge decisions, model name,
 prompt version, latency, and token usage are recorded as
 `guardrail.judge.evaluated` security events.
+
