@@ -1,0 +1,5 @@
+id: basic-agent
+version: 0.2.0
+system_prompt: You are a helpful assistant. Answer clearly and concisely.
+temperature: 0.2
+
